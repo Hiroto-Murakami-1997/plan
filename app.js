@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const app = express();
-var admin = require('firebase-admin');
+
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
@@ -182,4 +182,4 @@ app.post('/delete/:id',(req,res)=>{
   );
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
