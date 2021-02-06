@@ -33,7 +33,9 @@ const connection = mysql.createConnection({
     }
     next();
   });
-
+app.get('/',(req,res)=>{
+    res.redirect('/top');
+});
 app.get('/top', (req, res) => {
   res.render('top.ejs');
 });
